@@ -45,7 +45,7 @@ The companion board in this project uses two logic devices:
 * a Wemos-style (Lolin) D1 Mini ESP-12F module
 * a four-channel logic level converter
 
-Some of the wiring will be run underneath the logic devices. See Figure 2. Begin by making the following connections:
+Some of the wiring will be run underneath the logic devices. See Figure 2. Begin by making the connections listed in Table 1:
 
 | Wiring Under the Logic Devices   ||
 |From       | Function  |    To     |
@@ -58,6 +58,8 @@ Some of the wiring will be run underneath the logic devices. See Figure 2. Begin
 | 58d   | D0        | 18d       |
 | 62j   | Ground    | blue rail |
 | 63a   | 3.3 volt  | red rail  |
+
+[Table 1]
 
 Install the power converter on the top rows of the breadboard. Set the jumpers as shown in Figure 2:
 
@@ -86,6 +88,8 @@ Note: the different colors of LEDs take different amounts of electrical current.
 
 Position the resistors on the rows for the digital pins, so they bridge across the center divider of the breadboard. There are nine of these rows, located at 3-point intervals: 18, 21, 24, 27, 30, 33, 36, 39 and 42.
 
+There is room to route the wires for A0 and D0 down in the center divider, underneath the resistors. It keeps things tidy.
+
 This arrangement moderates the voltage only on the right-hand side of the row. It leaves the left-hand side capable of the digital pin's full 3.3-volt potential.
 
 The *greater-numbered* row next to each digital-pin row provides a connection to ground. Bring a wire from the blue rail across to column "j" on each of these rows: 19, 22, 25, 28, 31, 34, 37, 40 and 43.
@@ -100,7 +104,35 @@ Place the LV side to the left, closest to the 3.3-Volt power rail, with its pins
 
 ![Figure 3](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/Step2.png)
 
-[Figure 2: Resistors and Logic Level Shifter]
+[Figure 3: Resistors and Logic Level Shifter]
+
+### Step 3: the Under-Over-and-Around Wires
+
+This is where builders get to start using their imagination. The project needs a wire from each of the digital pins on the 8266 to its respective row on the Companion Board. Figure 4 illlustrates routing some of them under the 8266 then up over the Logic Level Shifter.
+
+The design here takes advantage of the fact that the I2C SDC and SDA pins have a dual purpose. They operate also as digital pins D1 and D2, respectively. This means we can take their signal off the rows where they already connect to the Logic Level Shifter.
+
+It is difficult to see in the photo, but there are actually 2 wires coming off the upper-left corner of the Shifter. They lie atop one another and wrap around before passing up over the resistors.
+
+Install wiring for the connections listed in Table 2:
+
+| Under-Over-and-Around Wires   ||
+|From       | Function  |    To     |
+|:-----:|:---------:|:---------:|
+| 44c   | D1        | 21d       |
+| 45c   | D2        | 24d       |
+| 60g   | D3        | 27d       |
+| 61g   | D4        | 30d       |
+| 57e   | A0        | 15e       |
+| 58d   | D0        | 18d       |
+| 62j   | Ground    | blue rail |
+| 63a   | 3.3 volt  | red rail  |
+
+[Table 1]
+
+![Figure 4](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/Step3.png)
+
+[Figure 4: Over-Under-and-Around Wires]
 
 
 ### The Code Files

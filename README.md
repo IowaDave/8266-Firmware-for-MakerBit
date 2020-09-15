@@ -47,17 +47,17 @@ The companion board in this project uses two logic devices:
 
 Some of the wiring will be run underneath the logic devices. See Figure 2. Begin by making the following connections:
 
-| Wiring Under the Logic Devices  |||
+| Wiring Under the Logic Devices   ||
 |From       | Function  |    To     |
-|:---------:|:---------:|:---------:|
-| 56f       | Serial TX | 49e       |
-| 57g       | Serial RX | 50e       |
-| 58h       | I2C SCL   | 45e       |
-| 59g       | I2C SDA   | 46e       |
-| 57e       | A0        | 15e       |
-| 58d       | D0        | 18d       |
-| 62j       | Ground    | blue rail |
-| 63a       | 3.3 volt  | red rail  |
+|:-----:|:---------:|:---------:|
+| 56f   | Serial TX | 49e       |
+| 57g   | Serial RX | 50e       |
+| 58h   | I2C SCL   | 45e       |
+| 59g   | I2C SDA   | 46e       |
+| 57e   | A0        | 15e       |
+| 58d   | D0        | 18d       |
+| 62j   | Ground    | blue rail |
+| 63a   | 3.3 volt  | red rail  |
 
 Install the power converter on the top rows of the breadboard. Set the jumpers as shown in Figure 2:
 

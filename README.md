@@ -203,6 +203,8 @@ The Companion Board becomes Super when it connects the serial pins to their corr
 | 49c   | Board Tx, MakerBit Rx        | P1       |
 | 50c   | Board Rx, MakerBit Tx        | P0       |
 
+[Table 5]
+
 With suitable instructions installed in their firmware, the MakerBit and the 8266 Companion can  work together on projects that neither one of them could execute standing alone. A set of code files is provided below by way of example.
 
 ### The Code Files

@@ -180,19 +180,21 @@ It is outside the scope of this article to discuss how the 8266 transforms a vol
 
 ### Step 6: Connect to the Companion Board
 
-The Companion Board is designed to make many types of connections easy. Just plug into the board. 
+The Companion Board is designed to make many types of connections easy. Just plug into the board.
 
-An LED can be plugged into pairs of positions on the right-hand side of the board. For example, digital pin D0 would activate an LED on positions 18h-19h, as shown in Figure 1, above.
+* An LED can be plugged into pairs of positions on the right-hand side of the board. For example, digital pin D0 would activate an LED on positions 18h-19h, as shown in Figure 1, above.
 
-A servo or other device that needs the full 3.3-volt potential of a digital pin could connect to the left-hand side of a digital pin row, for example, to position 33b for activation by pin D5.
+* A servo or other device that needs the full 3.3-volt potential of a digital pin could connect to the left-hand side of a digital pin row, for example, to position 33b for activation by pin D5.
 
-Pins D1 and D2 (coresponding to I2C SCL and SDA, respectively) have an extra feature. The Logic Level Shifter can transform their signal to 5 volts on the right-hand sides of rows 44 and 45. 
+* Pins D1 and D2 (coresponding to I2C SCL and SDA, respectively) have an extra feature. The Logic Level Shifter can transform their signal to 5 volts on the right-hand sides of rows 44 and 45.
+  * This capability makes it possible to connect with devices such as LCD displays that require a 5-volt signal.
+  * Figure 1 illustrates this feature with a green highlight.
 
-This capability makes it possible to connect with devices such as LCD displays that require a 5-volt signal. Figure 1 illustrates this feature with a green highlight.
+* Finally, the serial pins Tx and Rx (for Transmit and Receive) are available on rows 49 and 50.
+  * 3.3-volt level is on the left-hand side, in columns b and c.
+  * 5-volt level is enabled by the Logic Level Shifter on the right-hand sides of those rows, in columns g through j.
 
-Finally, the serial pins Tx and Rx (for Transmit and Receive) are available on rows 49 and 50. 3.3-volt level is on the left-hand side, in columns b and c. 5-volt level is enabled by the Logic Level Shifter on the right-hand sides of those rows, in columns g through j.
-
-Our Companion Board becomes Super when we connect the serial pins to their corresponding positions on a MakerBit. Our project uses the 3.3-volt side of things. Make the connections listed in Table 5:
+The Companion Board becomes Super when it connects the serial pins to their corresponding positions on a MakerBit. The 3.3-volt side of things is safest for both devices. Make the connections listed in Table 5:
 
 | Super Hookup   ||
 |Companion Board       | Function  |    MakerBit     |

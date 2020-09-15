@@ -108,9 +108,11 @@ Place the LV side to the left, closest to the 3.3-Volt power rail, with its pins
 
 ### Step 3: the Under-Over-and-Around Wires
 
-This is where builders get to start using their imagination. The project needs a wire from each of the digital pins on the 8266 to its respective row on the Companion Board. Figure 4 illlustrates routing some of them under the 8266 then up over the Logic Level Shifter.
+The project needs a wire from each of the digital pins on the 8266 to its respective row on the Companion Board. This is where builders get to start using their imagination. Arrange the wiring so as to please the eye. 
 
-The design here takes advantage of the fact that the I2C SDC and SDA pins have a dual purpose. They operate also as digital pins D1 and D2, respectively. This means we can take their signal off the rows where they already connect to the Logic Level Shifter.
+Figure 4 illlustrates routing some of the wires under the 8266 then up over the Logic Level Shifter.
+
+The design here takes advantage of the fact that the I2C SDC and SDA pins have a dual purpose. They operate also as digital pins D1 and D2, respectively. This means we can take their signal from the rows where they already connect to the Logic Level Shifter.
 
 It is difficult to see in the photo, but there are actually 2 wires coming off the upper-left corner of the Shifter. They lie atop one another and wrap around before passing up over the resistors.
 
@@ -128,12 +130,35 @@ Install wiring for the connections listed in Table 2:
 | 62j   | Ground    | blue rail |
 | 63a   | 3.3 volt  | red rail  |
 
-[Table 1]
+[Table 2]
 
 ![Figure 4](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/Step3.png)
 
 [Figure 4: Over-Under-and-Around Wires]
 
+### Step 4: Wire the Final Four Digital Pins
+
+There is not enough room underneath the 8266 module to fit all of the wires the Companion Board needs. The final four take off from outside the module, as shown in Figure 5.
+
+Align the pins of the 8266 module to sit on columns b and i, spanning rows 56 through 63. Press it firmly down into place. Nudge those wires underneath it until they lie flat. You want the black "feet" of the module to rest on the surface of the Companion Board.
+
+Install wiring for the connections listed in Table 4:
+
+| Final Four Digital Pins   ||
+|From       | Function  |    To     |
+|:-----:|:---------:|:---------:|
+| 59a   | D5        | 33d       |
+| 60a   | D6        | 36d       |
+| 61a   | D7        | 39d       |
+| 62a   | D8        | 42d       |
+
+[Table 4]
+
+Figure 5 illustrates a blue LED connected to digital pin D0. Try to visualize how the Companion Board provides that connection. Review the previous Figures to help you get the pathway clearly in your mind.
+
+![Figure 5](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/Step4.png)
+
+[Figure 5: Final Four Wires]
 
 ### The Code Files
 

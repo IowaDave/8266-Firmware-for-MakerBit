@@ -98,6 +98,11 @@ Install the Logic Level Shifter at this time. Examine it carefully. The two side
 
 Place the LV side to the left, closest to the 3.3-Volt power rail, with its pins in column d, rows 45 through 50. The pins for the HV side go into column f on the same rows.
 
+![Figure 3](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/Step2.png)
+
+[Figure 2: Resistors and Logic Level Shifter]
+
+
 ### The Code Files
 
 Here are the links to the code files:

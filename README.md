@@ -160,6 +160,24 @@ Figure 5 illustrates a blue LED connected to digital pin D0. Try to visualize ho
 
 [Figure 5: Final Four Wires]
 
+### Step 5: Optional Voltage Divider
+
+The Companion Board might actually be complete at this point, if it will an 8266 module that tolerates 3.3 volts on its analog (A0) input pin. For example, some models of the Wemos-style module illustrated in this project claim that capability. 
+
+However, many modules cannot withstand more than 1 volt of analog input. The Companion Board can be upgraded with a Voltage Divider to accommodate this limitation. 
+
+Figure 1, shown above and repeated for convenience below, shows a way to use row 14 for the purpose. A 4.7K-Ohm resistor brings 5-volt power across to position 14j. This is carried across the central divider to position 14ethe left-hand side of the row. A second, 1K-Ohm resistor connects position 14a to the blue (ground) rail. 
+
+Ohm's Law predicts a potential of about 0.87 volts on positions 14b, 14c, and 14d, located between the two resistors. Measure your actual voltage to make sure.
+
+You can plug a resistive-type of sensor across the left-hand sides of rows 14 and 15. For example, place a simple photocell at positions 14c and 15c.
+
+It is outside the scope of this article to discuss how the 8266 transforms a voltage found on pin A0 into a number your code can interpret. A web search will reveal many tutorials for taking analog readings with a microcontroller. Experimental learning is a good teacher, and we leave it as a go-the-extra-mile challenge for the reader.
+
+![Companion Board](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/CompanionBoard.png)
+
+[Figure 1: Companion Board With Voltage Divider]
+
 ### The Code Files
 
 Here are the links to the code files:

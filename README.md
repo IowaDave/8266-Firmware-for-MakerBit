@@ -162,7 +162,7 @@ Figure 5 illustrates a blue LED connected to digital pin D0. Try to visualize ho
 
 ### Step 5: Optional Voltage Divider
 
-The Companion Board might actually be complete at this point, if it will an 8266 module that tolerates 3.3 volts on its analog (A0) input pin. For example, some models of the Wemos-style module illustrated in this project claim that capability. 
+The Companion Board could be complete at this point, if it will deploy an 8266 module that tolerates 3.3 volts on its analog (A0) input pin. For example, some models of the Wemos-style module illustrated in this project claim that capability. 
 
 However, many modules cannot withstand more than 1 volt of analog input. The Companion Board can be upgraded with a Voltage Divider to accommodate this limitation. 
 

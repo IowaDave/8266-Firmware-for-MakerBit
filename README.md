@@ -5,7 +5,7 @@ Readers who complete the project described in this will have a breadboard simila
 
 ![Companion Board](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/CompanionBoard.png)
 
-#### Figure 1: An 8266 Companion Board
+[Figure 1: An 8266 Companion Board]
 
 The 8266 is on the module at the bottom of the photo. This one happens to be a Wemos-style (Lolin) ESP-12F development module. The breadboard is called a companion board because it helps the 8266 do more than merely connect to WiFi.
 
@@ -38,7 +38,7 @@ Readers who complete assembly of this project will have a breadboard that can en
 
 ## Building the Companion Board
 
-### Step 1: Wiring for the Logic Devices
+### Step 1: Wiring Under the Logic Devices
 
 The companion board in this project uses two logic devices:
 
@@ -72,7 +72,31 @@ Bring power and ground across to both sides of rows 47 and 48:
 
 ![Figure 2](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/Step1.png)
 
-[Figure 2]
+[Figure 2: Wiring underneath the logic devices]
+
+### Step 2: Install Resistors for LEDs
+
+This step takes inspiration from the MakerBit (and HyperDuino) by Roger Wagner. Make it easy for users to connect LEDs.
+
+LEDs need resistors plus wiring to both ground and a digital pin. The Companion Board puts all that in place, as illustrated in Figure 3.
+
+The 8266 puts 3.3 volts out on its digital pins. Typical small LEDs can perform well with 220-Ohm resistors. I have used 330-Ohm resistors successfully also; the light is a little less bright.
+
+Note: the different colors of LEDs take different amounts of electrical current. This means that some colors may be brighter than others on a Companion Board that uses just one type of resistor.
+
+Position the resistors on the rows for the digital pins, so they bridge across the center divider of the breadboard. There are nine of these rows, located at 3-point intervals: 18, 21, 24, 27, 30, 33, 36, 39 and 42.
+
+This arrangement moderates the voltage only on the right-hand side of the row. It leaves the left-hand side capable of the digital pin's full 3.3-volt potential.
+
+The *greater-numbered* row next to each digital-pin row provides a connection to ground. Bring a wire from the blue rail across to column "j" on each of these rows: 19, 22, 25, 28, 31, 34, 37, 40 and 43.
+
+Users can plug an LED directly into the Board. The red oval in Figure 3 simulates an LED connected to digital pin D0. The anode (longer leg) is in row 18. The cathode (shorter leg, flat spot on the rim) goes into row 19, where it connects to ground.
+
+##### Logic Level Shifter
+
+Install the Logic Level Shifter at this time. Examine it carefully. The two sides are different: one for higher voltage (HV), the other for lower voltage (LV). 
+
+Place the LV side to the left, closest to the 3.3-Volt power rail, with its pins in column d, rows 45 through 50. The pins for the HV side go into column f on the same rows.
 
 ### The Code Files
 

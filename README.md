@@ -166,9 +166,9 @@ The Companion Board might actually be complete at this point, if it will an 8266
 
 However, many modules cannot withstand more than 1 volt of analog input. The Companion Board can be upgraded with a Voltage Divider to accommodate this limitation. 
 
-Figure 1, shown above and repeated for convenience below, shows a way to use row 14 for the purpose. A 4.7K-Ohm resistor brings 5-volt power across to position 14j. This is carried across the central divider to position 14ethe left-hand side of the row. A second, 1K-Ohm resistor connects position 14a to the blue (ground) rail. 
+Figure 1, shown above and repeated for convenience below, shows a way to use row 14 for the purpose. A 4.7K-Ohm resistor brings 5-volt power across to position 14j. This is carried across the central divider to position 14e on the left-hand side of the row. A second, 1K-Ohm resistor connects position 14a to the blue (ground) rail. 
 
-Ohm's Law predicts a potential of about 0.87 volts on positions 14b, 14c, and 14d, located between the two resistors. Measure your actual voltage to make sure.
+Ohm's Law predicts a potential of about 0.87 volts on positions 14b, 14c, and 14d, as they are located between the two resistors. Measure your actual voltage to make sure.
 
 You can plug a resistive-type of sensor across the left-hand sides of rows 14 and 15. For example, place a simple photocell at positions 14c and 15c.
 

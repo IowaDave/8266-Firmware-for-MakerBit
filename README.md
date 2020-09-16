@@ -9,11 +9,13 @@ Readers who complete the project described in this will have a breadboard simila
 
 The 8266 is on the module at the bottom of the photo. This one happens to be a Wemos-style (Lolin) ESP-12F development module. The breadboard is called a companion board because it helps the 8266 do more than merely connect to WiFi.
 
-It can connect directly to a wide variety of sensors and actuators, when it is mounted on a companion board like this. An 8266 on a companion board can control many types of projects standing alone, like a small Arduino.
+An 8266 module can connect directly to a wide variety of sensors and actuators, when it is mounted on a companion board like the one in this project. It can control many types of projects standing alone, like a small Arduino.
 
 ### Make It a Super-Companion
 
-Even better, the companion board can work as a companion to another controller, such as a MakerBit. The other controller can send commands via a serial connection to the 8266 and request data be sent back from it. Call this combination a Super Companion Board
+Even better, the companion board can work as a companion to another controller, such as a MakerBit. The other controller can send commands via a serial connection to the 8266 and request data be sent back from it. Call this combination a Super Companion Board.
+
+With suitable instructions installed in their firmware, the MakerBit and the 8266 Companion can  work together on projects that neither one of them could execute standing alone.
 
 To make the Super Companion work is a two-part process:
 
@@ -125,10 +127,6 @@ Install wiring for the connections listed in Table 2:
 | 45c   | D2        | 24d       |
 | 60g   | D3        | 27d       |
 | 61g   | D4        | 30d       |
-| 57e   | A0        | 15e       |
-| 58d   | D0        | 18d       |
-| 62j   | Ground    | blue rail |
-| 63a   | 3.3 volt  | red rail  |
 
 [Table 2]
 
@@ -205,7 +203,7 @@ The Companion Board becomes Super when it connects the serial pins to their corr
 
 [Table 5]
 
-With suitable instructions installed in their firmware, the MakerBit and the 8266 Companion can  work together on projects that neither one of them could execute standing alone. A set of code files is provided below by way of example.
+All that remains is to install suitable code on both the 8266 and the MakerBit. A set of code files is provided below by way of example.
 
 ### The Code Files
 
@@ -215,3 +213,38 @@ Here are the links to the code files:
 * For the MakerBit: [https://github.com/IowaDave/pxt-makerbit-esp12](https://github.com/IowaDave/pxt-makerbit-esp12)
 
 The README files in those locations explain how to put the code onto your devices.
+
+### The Trick for Flashing a Wemos ESP-12F Module
+
+The 8266 has at least two different modes of operation: Run mode and Flash mode. It has to be put definitely in Flash mode before it will reliably accept new firmware. Then, it has to be put into Run mode before it will execute the firmware instructions. A power cycle is necessary when switching between the two modes.
+
+Different module designs approach Flash mode in different ways:
+
+* user must press a certain button to enter Flash mode.
+* user must place the 8266 on a special piece of hardware to flash it.
+* some modules are designed to handle the mode selection automatically.
+* Wemos (Lolin) D1 Mini used in the project needs a jumper wire for Flash mode.
+
+This article confines itself to peculiarities of the Wemos module.
+
+#Power Cycle#
+
+Begin every mode selection process with the chip in a power-off state.
+
+#Flash Mode#
+
+Pin D3 must be pulled low (that is, grounded) to start the module in Flash mode. Place a jumper wire between ground (the blue rail) and the pin labeled D3 on the module, as shown in Figure 6. Then power-up the device by plugging it into the computer's USB port.
+
+After you finish uploading the new firmware, disconnect power and the jumper wire.
+
+Do not take comfort from occasions when the Wemos module appears to accept a firmware upload without the jumper wire in place. You will find it does not do so consistently. Thankfully, the jumper wire always does the trick.
+
+#Run Mode#
+
+Isolate pin D3 from ground to start the module in Run mode. Disconnect the module from power. Remove the jumper between ground and the D3 pin. Then apply power. The module will operate in Run mode.
+
+Figure 6 illustrates placement of the jumper wire on the Companion Board for starting the 8266 in Flash mode.
+
+![Jumper Wire](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/GroundD3.png)
+
+[Figure 6: Ground the D3 Pin for Flash Mode]

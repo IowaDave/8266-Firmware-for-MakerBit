@@ -45,7 +45,7 @@ Readers who complete assembly of this project will have a breadboard that can en
 The companion board in this project uses two logic devices:
 
 * a Wemos-style (Lolin) D1 Mini ESP-12F module
-* a four-channel logic level converter
+* a four-channel Logic Level Shifter
 
 Some of the wiring will be run underneath the logic devices. See Figure 2. Begin by making the connections listed in Table 1:
 

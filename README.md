@@ -216,7 +216,7 @@ The README files in those locations explain how to put the code onto your device
 
 ### The Trick for Flashing a Wemos ESP-12F Module
 
-The 8266 has at least two different modes of operation: Run mode and Flash mode. It has to be put definitely in Flash mode before it will reliably accept new firmware. Then, it has to be put into Run mode before it will execute the firmware instructions. A power cycle is necessary when switching between the two modes.
+The 8266 has at least two different modes of operation: Run mode and Flash mode. It has to be put definitely in Flash mode before it will reliably accept new firmware. Then, it has to be put into Run mode before it will execute the firmware instructions.
 
 Different module designs approach Flash mode in different ways:
 
@@ -227,11 +227,11 @@ Different module designs approach Flash mode in different ways:
 
 This article confines itself to peculiarities of the Wemos module.
 
-#Power Cycle#
+**Power Cycle**
 
-Begin every mode selection process with the chip in a power-off state.
+A power cycle is necessary when switching between the two modes. Begin every mode selection process with the chip in a power-off state.
 
-#Flash Mode#
+**Flash Mode**
 
 Pin D3 must be pulled low (that is, grounded) to start the module in Flash mode. Place a jumper wire between ground (the blue rail) and the pin labeled D3 on the module, as shown in Figure 6. Then power-up the device by plugging it into the computer's USB port.
 
@@ -239,7 +239,7 @@ After you finish uploading the new firmware, disconnect power and the jumper wir
 
 Do not take comfort from occasions when the Wemos module appears to accept a firmware upload without the jumper wire in place. You will find it does not do so consistently. Thankfully, the jumper wire always does the trick.
 
-#Run Mode#
+**Run Mode**
 
 Isolate pin D3 from ground to start the module in Run mode. Disconnect the module from power. Remove the jumper between ground and the D3 pin. Then apply power. The module will operate in Run mode.
 

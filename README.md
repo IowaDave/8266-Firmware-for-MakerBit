@@ -231,6 +231,10 @@ This article confines itself to peculiarities of the Wemos module.
 
 A power cycle is necessary when switching between the two modes. Begin every mode selection process with the chip in a power-off state.
 
+**Run Mode**
+
+Disconnect the module from power. Ensure that pin D3 is *not* connected to ground. Then apply power. The module will operate in Run mode.
+
 **Flash Mode**
 
 Pin D3 must be pulled low (that is, grounded) to start the module in Flash mode. Place a jumper wire between ground (the blue rail) and the pin labeled D3 on the module, as shown in Figure 6. Then power-up the device by plugging it into the computer's USB port.
@@ -239,11 +243,8 @@ After you finish uploading the new firmware, disconnect power and the jumper wir
 
 Do not take comfort from occasions when the Wemos module appears to accept a firmware upload without the jumper wire in place. You will find it does not do so consistently. Thankfully, the jumper wire always does the trick.
 
-**Run Mode**
-
-Isolate pin D3 from ground to start the module in Run mode. Disconnect the module from power. Remove the jumper between ground and the D3 pin. Then apply power. The module will operate in Run mode.
-
 Figure 6 illustrates placement of the jumper wire on the Companion Board for starting the 8266 in Flash mode.
+
 
 ![Jumper Wire](https://raw.githubusercontent.com/IowaDave/8266-Firmware-for-MakerBit/gh-pages/images/GroundD3.png)
 
